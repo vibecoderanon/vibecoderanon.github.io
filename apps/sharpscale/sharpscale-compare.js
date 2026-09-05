@@ -40,13 +40,13 @@ export class SharpscaleCompare {
           <div class="compare-container" id="compare-box">
             <!-- Background: Sharpscale Sharp Output -->
             <div class="compare-image sharp-view" id="sharp-layer">
-              <canvas id="sharp-canvas" width="640" height="360"></canvas>
+              <canvas id="sharp-canvas" width="800" height="400"></canvas>
               <span class="view-tag right">SHARPSCALE: Crisp / Integer / CAS</span>
             </div>
 
-            <!-- Foreground: Bilinear Blur Output (clipped) -->
-            <div class="compare-image blur-view" id="blur-layer" style="width: 50%;">
-              <canvas id="blur-canvas" width="640" height="360"></canvas>
+            <!-- Foreground: Bilinear Blur Output (clipped with clip-path) -->
+            <div class="compare-image blur-view" id="blur-layer">
+              <canvas id="blur-canvas" width="800" height="400"></canvas>
               <span class="view-tag left">STOCK: Hardware Bilinear Blur</span>
             </div>
 
@@ -79,7 +79,7 @@ export class SharpscaleCompare {
                 <h4>Sharpscale-3DS</h4>
               </div>
               <ul class="arch-list">
-                <li><strong>800px Mode:</strong> Unlocks progressive 2D mode for top screen ($800\times240$)</li>
+                <li><strong>800px Mode:</strong> Unlocks progressive 2D mode for top screen (800 × 240)</li>
                 <li><strong>Polyphase Matrix:</strong> Custom FIRM patch replacing blurry bilinear coefficients</li>
                 <li><strong>GBA / DS 1:1:</strong> Integer scaling with centered bezels</li>
                 <li><strong>Luma3DS Plugin:</strong> Real-time in-game configuration via 3GX menu</li>
@@ -102,8 +102,8 @@ export class SharpscaleCompare {
     const updateSlider = (clientX) => {
       const rect = box.getBoundingClientRect();
       let percent = ((clientX - rect.left) / rect.width) * 100;
-      percent = Math.max(5, Math.min(95, percent));
-      blurLayer.style.width = `${percent}%`;
+      percent = Math.max(2, Math.min(98, percent));
+      blurLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
       handle.style.left = `${percent}%`;
     };
 
@@ -137,72 +137,231 @@ export class SharpscaleCompare {
     this.drawSharpCanvas();
   }
 
-  drawPattern(ctx, isSharp, filterMode = 'point') {
-    const w = 640;
-    const h = 360;
+  drawRetroScene(ctx, isSharp, filterMode = 'point') {
+    const w = 800;
+    const h = 400;
 
-    // Dark high-tech gaming scene
-    ctx.fillStyle = '#111319';
+    // 1. Twilight Sky Gradient
+    const sky = ctx.createLinearGradient(0, 0, 0, h * 0.7);
+    sky.addColorStop(0, '#0a0d1e');
+    sky.addColorStop(0.5, '#1e1b4b');
+    sky.addColorStop(1, '#312e81');
+    ctx.fillStyle = sky;
     ctx.fillRect(0, 0, w, h);
 
-    // Draw retro pixel sprite character and health UI
-    const pixelSize = 14;
-    const startX = 140;
-    const startY = 80;
+    // Stars
+    ctx.fillStyle = '#ffffff';
+    const starCoords = [
+      [45, 30], [120, 75], [210, 40], [330, 85], [420, 25], [510, 60],
+      [630, 35], [740, 80], [690, 110], [150, 120], [280, 110]
+    ];
+    starCoords.forEach(([sx, sy]) => {
+      ctx.fillRect(sx, sy, 3, 3);
+    });
 
-    // Sprite matrix (Retro hero icon)
-    const sprite = [
-      "  00000000  ",
-      " 0111111110 ",
-      "011001100110",
-      "011001100110",
-      "011111111110",
-      "011100001110",
-      " 0110  0110 ",
-      "  000  000  "
+    // Moon
+    ctx.fillStyle = '#fef08a';
+    ctx.beginPath();
+    ctx.arc(680, 80, 28, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#0a0d1e';
+    ctx.beginPath();
+    ctx.arc(692, 74, 25, 0, Math.PI * 2);
+    ctx.fill();
+
+    // 2. Silhouette Mountains
+    ctx.fillStyle = '#1e1b4b';
+    ctx.beginPath();
+    ctx.moveTo(0, 260);
+    ctx.lineTo(140, 150);
+    ctx.lineTo(280, 260);
+    ctx.lineTo(440, 170);
+    ctx.lineTo(600, 260);
+    ctx.lineTo(720, 180);
+    ctx.lineTo(800, 250);
+    ctx.lineTo(800, 320);
+    ctx.lineTo(0, 320);
+    ctx.fill();
+
+    // 3. Ground & Floating Platforms
+    const drawPlatform = (px, py, pw, ph) => {
+      // Grass top
+      ctx.fillStyle = '#10b981';
+      ctx.fillRect(px, py, pw, 8);
+      ctx.fillStyle = '#34d399';
+      for (let x = px; x < px + pw; x += 12) {
+        ctx.fillRect(x, py, 6, 4);
+      }
+
+      // Dirt/Stone body
+      ctx.fillStyle = '#78350f';
+      ctx.fillRect(px, py + 8, pw, ph - 8);
+      ctx.fillStyle = '#92400e';
+      for (let y = py + 12; y < py + ph; y += 14) {
+        for (let x = px + 4; x < px + pw - 8; x += 18) {
+          ctx.fillRect(x + ((y % 28 === 0) ? 6 : 0), y, 10, 6);
+        }
+      }
+    };
+
+    // Main ground
+    drawPlatform(0, 300, w, 100);
+    // Floating platforms
+    drawPlatform(120, 220, 160, 28);
+    drawPlatform(480, 190, 180, 28);
+
+    // 4. Hero Character Sprite (Pixel Art Knight)
+    const charX = 180;
+    const charY = 150;
+    const p = 4; // 4px per sprite pixel
+
+    // Sprite pattern: 16x18 matrix
+    const hero = [
+      "    0000000     ",
+      "   011111110    ",
+      "   012222210    ",
+      "   012333210    ",
+      "   011111110    ",
+      "   004444400    ",
+      "  05544444550   ",
+      "  05544444550   ",
+      "  05044444050   ",
+      "  00044444000   ",
+      "   006666600    ",
+      "   011111110    ",
+      "   011101110    ",
+      "   011101110    ",
+      "   077707770    ",
+      "  07777077770   "
     ];
 
-    for (let r = 0; r < sprite.length; r++) {
-      for (let c = 0; c < sprite[r].length; c++) {
-        const char = sprite[r][c];
-        if (char === '0') ctx.fillStyle = '#0f172a';
-        else if (char === '1') ctx.fillStyle = '#06b6d4';
-        else continue;
+    const palette = {
+      '0': '#0f172a', // Outline
+      '1': '#94a3b8', // Steel Armor
+      '2': '#38bdf8', // Glowing Visor Cyan
+      '3': '#e0f2fe', // Visor Glint
+      '4': '#dc2626', // Tunic Red
+      '5': '#fbbf24', // Gold Pauldrons
+      '6': '#b45309', // Leather Belt
+      '7': '#334155'  // Boots
+    };
 
-        ctx.fillRect(startX + c * pixelSize, startY + r * pixelSize, pixelSize, pixelSize);
+    for (let r = 0; r < hero.length; r++) {
+      for (let c = 0; c < hero[r].length; c++) {
+        const key = hero[r][c];
+        if (key !== ' ' && palette[key]) {
+          ctx.fillStyle = palette[key];
+          ctx.fillRect(charX + c * p, charY + r * p, p, p);
+        }
       }
     }
 
-    // Health HUD bar
-    ctx.fillStyle = '#e11d48';
-    ctx.fillRect(startX, startY + sprite.length * pixelSize + 20, 160, 16);
-    ctx.fillStyle = '#10b981';
-    ctx.fillRect(startX, startY + sprite.length * pixelSize + 20, 110, 16);
+    // Sword in hand
+    ctx.fillStyle = '#e2e8f0';
+    ctx.fillRect(charX + 17 * p, charY + 2 * p, p, 10 * p);
+    ctx.fillStyle = '#fbbf24';
+    ctx.fillRect(charX + 15 * p, charY + 11 * p, 5 * p, p);
+    ctx.fillStyle = '#78350f';
+    ctx.fillRect(charX + 17 * p, charY + 12 * p, p, 3 * p);
 
-    // Text label
-    ctx.font = 'bold 16px monospace';
+    // 5. Golden Collectible Rupee / Gem on right platform
+    const gemX = 560;
+    const gemY = 135;
+    const gem = [
+      "   000   ",
+      "  01110  ",
+      " 0122210 ",
+      "012333210",
+      " 0122210 ",
+      "  01110  ",
+      "   000   "
+    ];
+    const gemPal = {
+      '0': '#78350f',
+      '1': '#f59e0b',
+      '2': '#fde047',
+      '3': '#ffffff'
+    };
+    for (let r = 0; r < gem.length; r++) {
+      for (let c = 0; c < gem[r].length; c++) {
+        const key = gem[r][c];
+        if (key !== ' ' && gemPal[key]) {
+          ctx.fillStyle = gemPal[key];
+          ctx.fillRect(gemX + c * 4, gemY + r * 4, 4, 4);
+        }
+      }
+    }
+
+    // 6. Retro Gaming HUD (Top Bar)
+    ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+    ctx.fillRect(0, 0, w, 44);
+    ctx.fillStyle = '#38bdf8';
+    ctx.fillRect(0, 43, w, 2);
+
+    // HUD Hearts
+    const drawPixelHeart = (hx, hy) => {
+      ctx.fillStyle = '#ef4444';
+      ctx.fillRect(hx + 2, hy, 4, 3);
+      ctx.fillRect(hx + 8, hy, 4, 3);
+      ctx.fillRect(hx, hy + 3, 14, 4);
+      ctx.fillRect(hx + 2, hy + 7, 10, 3);
+      ctx.fillRect(hx + 4, hy + 10, 6, 3);
+      ctx.fillRect(hx + 6, hy + 13, 2, 2);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(hx + 3, hy + 3, 2, 2);
+    };
+
+    for (let i = 0; i < 5; i++) {
+      drawPixelHeart(20 + i * 20, 14);
+    }
+
+    // HUD Text: Crisp Monospace
+    ctx.font = "bold 15px 'Fira Code', monospace";
+    ctx.fillStyle = '#fbbf24';
+    ctx.fillText("♦ × 99", 140, 28);
+
     ctx.fillStyle = '#f8fafc';
-    ctx.fillText("HP: 110/160  [REAL-MODE 1:1]", startX, startY + sprite.length * pixelSize + 56);
+    ctx.fillText("WORLD 1-1 // MT. LANAYRU", 260, 28);
 
-    // Sub-pixel grid overlay
+    ctx.fillStyle = '#38bdf8';
+    ctx.fillText("SCORE: 048200", 630, 28);
+
+    // 7. Mode-Specific Post-Processing
     if (isSharp) {
       if (filterMode === 'point') {
-        // High contrast razor-sharp grid lines
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+        // Discrete pixel grid overlay
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
         ctx.lineWidth = 1;
-        for (let x = 0; x < w; x += pixelSize) {
-          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+        for (let x = 0; x < w; x += 16) {
+          ctx.beginPath(); ctx.moveTo(x, 44); ctx.lineTo(x, h); ctx.stroke();
         }
-        for (let y = 0; y < h; y += pixelSize) {
+        for (let y = 44; y < h; y += 16) {
           ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
         }
+      } else if (filterMode === 'integer') {
+        // Pillarbox integer scale bezel
+        ctx.fillStyle = '#05070c';
+        ctx.fillRect(0, 0, 40, h);
+        ctx.fillRect(w - 40, 0, 40, h);
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.3)';
+        ctx.strokeRect(40, 0, w - 80, h);
       } else if (filterMode === 'cas') {
-        // Contrast adaptive sharpening: micro edge accentuation
-        ctx.strokeStyle = '#38bdf8';
-        ctx.lineWidth = 2;
-        ctx.strokeRect(startX - 4, startY - 4, sprite[0].length * pixelSize + 8, sprite.length * pixelSize + 8);
+        // Contrast adaptive accentuation
+        ctx.fillStyle = 'rgba(6, 182, 212, 0.03)';
+        ctx.fillRect(charX - 10, charY - 10, 100, 100);
       }
     }
+
+    // Bottom Resolution Stamp
+    ctx.font = "12px 'Fira Code', monospace";
+    ctx.fillStyle = isSharp ? '#10b981' : '#f87171';
+    ctx.textAlign = 'center';
+    ctx.fillText(
+      isSharp ? "SHARPSCALE: 1080p DOCKED // 3X NATIVE INTEGER // ZERO BLUR" : "STOCK: 1080p HARDWARE BILINEAR INTERPOLATION // SMEARED EDGES",
+      w / 2,
+      h - 15
+    );
+    ctx.textAlign = 'left';
   }
 
   drawBlurCanvas() {
@@ -210,9 +369,9 @@ export class SharpscaleCompare {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     
-    // Simulate bilinear smear with canvas blur filter
-    ctx.filter = 'blur(4.5px)';
-    this.drawPattern(ctx, false);
+    // Simulate stock hardware bilinear smear
+    ctx.filter = 'blur(3.5px)';
+    this.drawRetroScene(ctx, false);
     ctx.filter = 'none';
   }
 
@@ -221,6 +380,6 @@ export class SharpscaleCompare {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     ctx.imageSmoothingEnabled = false;
-    this.drawPattern(ctx, true, this.activeFilter);
+    this.drawRetroScene(ctx, true, this.activeFilter);
   }
 }
