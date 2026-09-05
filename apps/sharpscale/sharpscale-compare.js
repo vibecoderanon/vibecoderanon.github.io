@@ -1,4 +1,4 @@
-﻿// Sharpscale Interactive Split-Screen Comparison Component
+// Sharpscale Interactive Split-Screen Comparison Component
 export class SharpscaleCompare {
   constructor(container) {
     this.container = container;
@@ -38,16 +38,14 @@ export class SharpscaleCompare {
 
           <!-- Split-Screen Interactive Visualizer -->
           <div class="compare-container" id="compare-box">
-            <!-- Background: Sharpscale Sharp Output -->
+            <!-- Background: Sharpscale Sharp Output (Full Width) -->
             <div class="compare-image sharp-view" id="sharp-layer">
               <canvas id="sharp-canvas" width="800" height="400"></canvas>
-              <span class="view-tag right">SHARPSCALE: Crisp / Integer / CAS</span>
             </div>
 
-            <!-- Foreground: Bilinear Blur Output (clipped with clip-path) -->
+            <!-- Foreground: Bilinear Blur Output (Full Width, clipped with inset) -->
             <div class="compare-image blur-view" id="blur-layer">
               <canvas id="blur-canvas" width="800" height="400"></canvas>
-              <span class="view-tag left">STOCK: Hardware Bilinear Blur</span>
             </div>
 
             <!-- Draggable Divider Line -->
@@ -55,8 +53,12 @@ export class SharpscaleCompare {
               <div class="handle-line"></div>
               <div class="handle-thumb">⯈⯇</div>
             </div>
+
+            <!-- Anchored View Tags (never shrink or jump) -->
+            <span class="view-tag left">STOCK: Hardware Bilinear Blur</span>
+            <span class="view-tag right">SHARPSCALE: Crisp / Integer / CAS</span>
           </div>
-          <div class="compare-hint">⇄ Drag slider to inspect pixel clarity across hardware scaling modes</div>
+          <div class="compare-hint">⇄ Drag or click slider to inspect pixel clarity across hardware scaling modes</div>
 
           <!-- Architecture Comparison Cards -->
           <div class="arch-cards-grid">
@@ -102,16 +104,22 @@ export class SharpscaleCompare {
     const updateSlider = (clientX) => {
       const rect = box.getBoundingClientRect();
       let percent = ((clientX - rect.left) / rect.width) * 100;
-      percent = Math.max(2, Math.min(98, percent));
-      blurLayer.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+      percent = Math.max(0, Math.min(100, percent));
+      const clip = `inset(0 ${100 - percent}% 0 0)`;
+      blurLayer.style.clipPath = clip;
+      blurLayer.style.webkitClipPath = clip;
       handle.style.left = `${percent}%`;
     };
 
     let isDragging = false;
-    handle.addEventListener('mousedown', () => { isDragging = true; });
+    handle.addEventListener('mousedown', (e) => { isDragging = true; e.preventDefault(); });
     window.addEventListener('mouseup', () => { isDragging = false; });
     window.addEventListener('mousemove', (e) => {
       if (isDragging) updateSlider(e.clientX);
+    });
+
+    box.addEventListener('click', (e) => {
+      updateSlider(e.clientX);
     });
 
     // Touch support

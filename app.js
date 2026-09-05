@@ -1,8 +1,8 @@
-﻿// Main Portal Application & App Pipeline Controller
-import { SSSETool } from './apps/ssse/ssse-tool.js';
-import { XCDETool } from './apps/xcde/xcde-tool.js';
-import { KickassPreview } from './apps/kickass/kickass-preview.js';
-import { SharpscaleCompare } from './apps/sharpscale/sharpscale-compare.js';
+// Main Portal Application & App Pipeline Controller
+import { SSSETool } from './apps/ssse/ssse-tool.js?v=1.2';
+import { XCDETool } from './apps/xcde/xcde-tool.js?v=1.2';
+import { KickassPreview } from './apps/kickass/kickass-preview.js?v=1.2';
+import { SharpscaleCompare } from './apps/sharpscale/sharpscale-compare.js?v=1.2';
 
 class HomebrewHub {
   constructor() {
