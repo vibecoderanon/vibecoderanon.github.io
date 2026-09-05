@@ -1,4 +1,4 @@
-﻿{
+{
   "hub": {
     "title": "vibecoderanon // Homebrew & Tools Hub",
     "author": "vibecoderanon",
@@ -109,13 +109,50 @@
       "actionType": "compare",
       "compareComponent": "sharpscale-compare",
       "repoUrl": "https://github.com/vibecoderanon/Sharpscale",
+      "downloads": [
+        {
+          "label": "Download Multi-Console Suite (.ZIP)",
+          "filename": "Sharpscale-MultiConsole-Suite.zip",
+          "path": "apps/sharpscale/downloads/Sharpscale-MultiConsole-Suite.zip",
+          "size": "3.5 KB",
+          "primary": true
+        },
+        {
+          "label": "Download Tesla Overlay (.OVL)",
+          "filename": "ovl-sharpscale.ovl",
+          "path": "apps/sharpscale/downloads/ovl-sharpscale.ovl",
+          "size": "2.5 KB",
+          "primary": false
+        },
+        {
+          "label": "Download SaltyNX Plugin (.ELF)",
+          "filename": "sharpscale.elf",
+          "path": "apps/sharpscale/downloads/sharpscale.elf",
+          "size": "2.5 KB",
+          "primary": false
+        },
+        {
+          "label": "Download 3DS App (.3DSX)",
+          "filename": "Sharpscale-3DS.3dsx",
+          "path": "apps/sharpscale/downloads/Sharpscale-3DS.3dsx",
+          "size": "11.8 KB",
+          "primary": false
+        },
+        {
+          "label": "Download Luma Plugin (.3GX)",
+          "filename": "sharpscale.3gx",
+          "path": "apps/sharpscale/downloads/sharpscale.3gx",
+          "size": "1.0 KB",
+          "primary": false
+        }
+      ],
       "features": [
         "Auto-calculated integer scaling for 1080p and 720p displays",
         "Hardware swapchain sampler override for point/nearest-neighbor filtering",
         "AMD Contrast Adaptive Sharpening (CAS) shader pass",
         "3DS 800x240 Progressive 2D mode with custom bezels",
         "Tesla Overlay (Switch) and Luma 3GX in-game configuration menus",
-        "Automated devkitPro CI/CD build actions"
+        "Standalone pre-packaged SD card archive (Multi-Console Suite)"
       ]
     }
   ]

@@ -18,11 +18,14 @@ export class SharpscaleCompare {
             </div>
           </div>
           <div class="tool-actions">
-            <a href="https://github.com/vibecoderanon/Sharpscale/releases" target="_blank" class="btn btn-blue">
-              <span>📦</span> GitHub Releases (CI Built)
+            <a href="apps/sharpscale/downloads/Sharpscale-MultiConsole-Suite.zip" download="Sharpscale-MultiConsole-Suite.zip" class="btn btn-blue">
+              <span>⬇️</span> Download Suite (.ZIP)
+            </a>
+            <a href="https://github.com/vibecoderanon/Sharpscale/releases" target="_blank" class="btn btn-secondary">
+              <span>📦</span> Releases
             </a>
             <a href="https://github.com/vibecoderanon/Sharpscale" target="_blank" class="btn btn-secondary">
-              <span>⭐</span> View Source
+              <span>⭐</span> Source
             </a>
           </div>
         </div>
