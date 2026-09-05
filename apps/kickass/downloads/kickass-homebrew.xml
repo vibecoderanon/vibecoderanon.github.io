@@ -1,6 +1,6 @@
 <button config="">
   <name>Kickass Homebrew</name>
-  <author>You</author>
+  <author>vibecoderanon</author>
   <version>1.0.0</version>
-  <description>A premium proof-of-concept Switch homebrew application featuring a wavy 90s WordArt splash screen, strobe light utility, automated Picross solver, and an optimized Sudoku solver using the Minimum Remaining Values (MRV) heuristic. Entering the Konami Code on the splash screen unlocks a secret Zelda easter egg! Developed in Lua using LÖVE Potion. Developed by Antigravity AI.</description>
+  <description>A premium proof-of-concept Switch homebrew application featuring a wavy 90s WordArt splash screen, strobe light utility, automated Picross solver, and an optimized Sudoku solver using the Minimum Remaining Values (MRV) heuristic. Includes a secret easter egg screen hidden for you to discover! Developed in Lua using LÖVE Potion.</description>
 </button>
