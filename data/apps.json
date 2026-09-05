@@ -71,11 +71,18 @@
       "repoUrl": "https://github.com/vibecoderanon/kickass-homebrew",
       "downloads": [
         {
+          "label": "Download SD Card Package (.ZIP)",
+          "filename": "kickass-homebrew-switch-v1.0.0.zip",
+          "path": "apps/kickass/downloads/kickass-homebrew-switch-v1.0.0.zip",
+          "size": "3.68 MB",
+          "primary": true
+        },
+        {
           "label": "Download .NRO (Executable)",
           "filename": "kickass-homebrew.nro",
           "path": "apps/kickass/downloads/kickass-homebrew.nro",
           "size": "6.39 MB",
-          "primary": true
+          "primary": false
         },
         {
           "label": "Download .XML (Metadata)",
