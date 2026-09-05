@@ -1,0 +1,6 @@
+<button config="">
+  <name>Deltarune Save Editor</name>
+  <author>vibecoderanon</author>
+  <version>1.0.0</version>
+  <description>Native Nintendo Switch save editor for DELTARUNE Chapter 1 &amp; 2. Features GameMaker DS-list hex codec support, JKSV and Checkpoint auto-detection, party stat modifications (Kris, Susie, Ralsei, Noelle), Dark Dollars and Light World money boosts, Chapter 2 recruits roster auto-completer, and secret boss flag toggles.</description>
+</button>

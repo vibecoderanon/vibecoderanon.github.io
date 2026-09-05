@@ -161,6 +161,55 @@
         "Tesla Overlay (Switch) and Luma 3GX in-game configuration menus",
         "Standalone pre-packaged SD card archive (Multi-Console Suite)"
       ]
+    },
+    {
+      "id": "deltarune",
+      "name": "Deltarune Switch Save Editor",
+      "shortName": "Deltarune NX",
+      "icon": "❤️",
+      "accentColor": "#8b5cf6",
+      "category": "Switch Homebrew",
+      "platforms": ["Switch"],
+      "tagline": "Controller-driven LÖVE Potion save editor for DELTARUNE Ch. 1 & 2 with GameMaker DS-List hex engine.",
+      "description": "Native Nintendo Switch homebrew for editing DELTARUNE save data directly on console. Features full GameMaker DS-list hex codec support, direct SD card scanning for JKSV and Checkpoint backups, party stats (Kris, Susie, Ralsei, Noelle), currency boosts, town recruits roster completer, and secret boss flag toggles.",
+      "badge": "Standalone Homebrew",
+      "version": "v1.0.0",
+      "actionType": "preview",
+      "previewComponent": "kickass-preview",
+      "repoUrl": "https://github.com/vibecoderanon/deltarune-save-editor",
+      "downloads": [
+        {
+          "label": "Download SD Card Package (.ZIP)",
+          "filename": "deltarune-save-editor-switch-v1.0.0.zip",
+          "path": "apps/deltarune/downloads/deltarune-save-editor-switch-v1.0.0.zip",
+          "size": "3.61 MB",
+          "primary": true
+        },
+        {
+          "label": "Download .NRO (Executable)",
+          "filename": "deltarune-save-editor.nro",
+          "path": "apps/deltarune/downloads/deltarune-save-editor.nro",
+          "size": "6.32 MB",
+          "primary": false
+        },
+        {
+          "label": "Download .XML (Metadata)",
+          "filename": "deltarune-save-editor.xml",
+          "path": "apps/deltarune/downloads/deltarune-save-editor.xml",
+          "size": "480 B",
+          "primary": false
+        }
+      ],
+      "features": [
+        "Native GameMaker DS-list hex serializer/deserializer",
+        "Auto-detects JKSV and Checkpoint saves in sdmc:/JKSV/DELTARUNE/",
+        "Full Party stat tuning: HP, Max HP, ATK, DEF, MAG, and GUTS",
+        "Dark Dollars & Light World Money editing up to $99,999",
+        "Equipment & Inventory manager for weapons, armors, and items",
+        "Chapter 2 Town Recruits roster inspector with 1-click 'Recruit All'",
+        "Secret boss flag toggles: Jevil, Spamton NEO, and Snowgrave route",
+        "Automatic .bak safety backups created before every save"
+      ]
     }
   ]
 }
