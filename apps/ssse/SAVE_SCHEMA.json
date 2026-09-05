@@ -1,0 +1,119 @@
+{
+  "game": "The Legend of Zelda: Skyward Sword HD",
+  "platform": "Nintendo Switch",
+  "target_file": "wiiking2.sav",
+  "endianness": "little",
+  "file_size": 122400,
+  "slot_size": 21440,
+  "header_offset": "0x00000",
+  "slot_offsets": {
+    "slot_0": { "label": "Save File 1", "offset": "0x00020" },
+    "slot_1": { "label": "Save File 2", "offset": "0x053E0" },
+    "slot_2": { "label": "Save File 3", "offset": "0x0A7A0" },
+    "slot_3": { "label": "Autosave",    "offset": "0x0FB60" }
+  },
+  "fields": {
+    "hero_name": {
+      "rel_offset": "0x08D4",
+      "type": "utf16_le",
+      "bytes": 16,
+      "description": "Hero player name (up to 8 UTF-16 LE characters)"
+    },
+    "rupees": {
+      "rel_offset": "0x0908",
+      "type": "uint16_le",
+      "bytes": 2,
+      "max_value": 9999,
+      "description": "Rupees carrying count"
+    },
+    "current_hearts": {
+      "rel_offset": "0x090D",
+      "type": "uint8",
+      "bytes": 1,
+      "unit": "quarter_hearts",
+      "description": "Current health remaining in quarter hearts (16 = 4.0 hearts)"
+    },
+    "max_hearts": {
+      "rel_offset": "0x09EC",
+      "type": "uint16_le",
+      "bytes": 2,
+      "unit": "quarter_hearts",
+      "description": "Max health / Heart Containers in quarter hearts (24 = 6.0 hearts, 28 = 7.0 hearts)"
+    },
+    "stage_id": {
+      "rel_offset": "0x531C",
+      "type": "ascii",
+      "bytes": 8,
+      "description": "Stage / Location ID string (e.g. F000 = Skyloft, F002r = Faron Woods)"
+    },
+    "checksum": {
+      "rel_offset": "0x53BC",
+      "type": "uint32_be",
+      "bytes": 4,
+      "description": "CRC32 checksum over the first 0x53BC bytes of the slot"
+    },
+    "pouch_equipment_array": {
+      "rel_offset": "0x07C0",
+      "type": "pair_array",
+      "bytes": 80,
+      "element_bytes": 4,
+      "description": "Active Adventure Pouch items (pairs of uint16_le Item ID, uint16_le Qty/Level)"
+    },
+    "item_check_locker_array": {
+      "rel_offset": "0x0810",
+      "type": "pair_array",
+      "bytes": 80,
+      "element_bytes": 4,
+      "description": "Item Check locker storage items (pairs of uint16_le Item ID, uint16_le Qty/Level)"
+    },
+    "amber_relics": {
+      "rel_offset": "0x0A34",
+      "type": "uint8",
+      "bytes": 1,
+      "max_value": 99,
+      "description": "Amber Relics count"
+    },
+    "monster_horns": {
+      "rel_offset": "0x0A36",
+      "type": "uint8",
+      "bytes": 1,
+      "max_value": 99,
+      "description": "Monster Horns count"
+    },
+    "goddess_plumes": {
+      "rel_offset": "0x0A3A",
+      "type": "uint8",
+      "bytes": 1,
+      "max_value": 99,
+      "description": "Goddess Plumes count"
+    },
+    "jelly_blobs": {
+      "rel_offset": "0x0A3C",
+      "type": "uint8",
+      "bytes": 1,
+      "max_value": 99,
+      "description": "Jelly Blobs count"
+    },
+    "eldin_ore": {
+      "rel_offset": "0x0A3E",
+      "type": "uint8",
+      "bytes": 1,
+      "max_value": 99,
+      "description": "Eldin Ore count"
+    },
+    "woodland_rhino_beetle": {
+      "rel_offset": "0x0A5E",
+      "type": "uint8",
+      "bytes": 1,
+      "max_value": 99,
+      "description": "Woodland Rhino Beetle count"
+    },
+    "blessed_butterfly": {
+      "rel_offset": "0x0A60",
+      "type": "uint8",
+      "bytes": 1,
+      "max_value": 99,
+      "description": "Blessed Butterfly count"
+    }
+  }
+}

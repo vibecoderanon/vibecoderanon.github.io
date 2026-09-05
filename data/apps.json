@@ -1,0 +1,122 @@
+﻿{
+  "hub": {
+    "title": "vibecoderanon // Homebrew & Tools Hub",
+    "author": "vibecoderanon",
+    "githubUser": "vibecoderanon",
+    "description": "A unified web portal and interactive suite for homebrew applications, reverse-engineering save editors, and console display plugins."
+  },
+  "apps": [
+    {
+      "id": "ssse",
+      "name": "Skyward Sword HD Save Editor",
+      "shortName": "SSSE",
+      "icon": "🗡️",
+      "accentColor": "#f59e0b",
+      "category": "Save Editor",
+      "platforms": ["Switch"],
+      "tagline": "Web-based binary editor for wiiking2.sav with client-side CRC32 integrity engine.",
+      "description": "Edit rupees, heart containers, player name, pouch equipment, and inventory ammo directly in your browser. Features real-time Little-Endian parsing and automatic Big-Endian CRC32 recalculation on save export.",
+      "badge": "Interactive Tool",
+      "version": "v1.0.0",
+      "actionType": "tool",
+      "toolComponent": "ssse-tool",
+      "repoUrl": "https://github.com/vibecoderanon/skyward-sword-hd-save-editor",
+      "features": [
+        "Interactive heart container & quarter-heart health tuning",
+        "Rupees up to 9,999 with Tycoon Wallet support",
+        "Slot switcher: Save File 1, 2, 3, and Autosave",
+        "Client-side IEEE 802.3 CRC32 recalculation",
+        "Raw byte hex inspector for live offset verification",
+        "Zero setup: 100% private in-browser editing"
+      ]
+    },
+    {
+      "id": "xcde",
+      "name": "Xenoblade Chronicles Save Tool",
+      "shortName": "XCDE Suite",
+      "icon": "⚔️",
+      "accentColor": "#06b6d4",
+      "category": "Save Converter",
+      "platforms": ["Wii", "Switch"],
+      "tagline": "Convert Wii monado saves into Switch Definitive Edition saves with pre-clear spoiler protection.",
+      "description": "Translates characters (Shulk, Reyn, Dunban, Sharla, Riki, Melia, Seven), EXP, AP, money, and play time from Wii (SX4E) saves into native Switch XC:DE format. Pairs each save with verified .tmb thumbnails and retains clean title screen states.",
+      "badge": "Interactive Tool",
+      "version": "v1.0.0",
+      "actionType": "tool",
+      "toolComponent": "xcde-tool",
+      "repoUrl": "https://github.com/vibecoderanon/xc-games-save-tool",
+      "features": [
+        "In-browser binary converter for monado01-03",
+        "Pre-clear template preservation (no title screen spoilers)",
+        "Party stat inspector: character levels, EXP, and AP",
+        "Header play time recalculator matching Wii timestamps",
+        "1-click download of ready-to-restore JKSV saves",
+        "Interactive save visualizer and inspector"
+      ]
+    },
+    {
+      "id": "kickass",
+      "name": "Kickass Homebrew",
+      "shortName": "Kickass HB",
+      "icon": "🕹️",
+      "accentColor": "#ec4899",
+      "category": "Switch Homebrew",
+      "platforms": ["Switch"],
+      "tagline": "Retro synthwave LÖVE Potion homebrew suite engineered for Switch Applet Mode (~5.3MB).",
+      "description": "A high-performance Nintendo Switch homebrew featuring an 80s synthwave perspective grid, telemetry-driven arcade HUD, photosensitivity strobe tuner, Picross 5x5 step solver, and 9x9 Sudoku MRV constraint solver.",
+      "badge": "Live Preview & Download",
+      "version": "v1.0.0",
+      "actionType": "preview",
+      "previewComponent": "kickass-preview",
+      "repoUrl": "https://github.com/vibecoderanon/kickass-homebrew",
+      "downloads": [
+        {
+          "label": "Download .NRO (Executable)",
+          "filename": "kickass-homebrew.nro",
+          "path": "apps/kickass/downloads/kickass-homebrew.nro",
+          "size": "6.39 MB",
+          "primary": true
+        },
+        {
+          "label": "Download .XML (Metadata)",
+          "filename": "kickass-homebrew.xml",
+          "path": "apps/kickass/downloads/kickass-homebrew.xml",
+          "size": "517 B",
+          "primary": false
+        }
+      ],
+      "features": [
+        "Ultra-lightweight memory profile (~5.3MB) safe for Album mode",
+        "Real-time D-Pad and joystick controller telemetry HUD",
+        "Interactive 5x5 Picross logic deduction visualizer",
+        "9x9 Sudoku solver using Minimum Remaining Values (MRV)",
+        "Synthwave perspective grid and wave WordArt rendering",
+        "Pre-packaged standalone executable ready for sdmc:/switch/"
+      ]
+    },
+    {
+      "id": "sharpscale",
+      "name": "Sharpscale Multi-Console Suite",
+      "shortName": "Sharpscale",
+      "icon": "🔍",
+      "accentColor": "#3b82f6",
+      "category": "Display Plugin",
+      "platforms": ["Switch", "3DS"],
+      "tagline": "Eliminate hardware bilinear blur with integer scaling and nearest-neighbor overrides.",
+      "description": "Hardware display plugins and configuration utilities for Nintendo Switch (Sharpscale-NX via SaltyNX & Tesla) and Nintendo 3DS (Sharpscale-3DS via Luma 3GX & FIRM patcher) delivering razor-sharp, pixel-perfect visuals.",
+      "badge": "Interactive Showcase",
+      "version": "v1.0.0",
+      "actionType": "compare",
+      "compareComponent": "sharpscale-compare",
+      "repoUrl": "https://github.com/vibecoderanon/Sharpscale",
+      "features": [
+        "Auto-calculated integer scaling for 1080p and 720p displays",
+        "Hardware swapchain sampler override for point/nearest-neighbor filtering",
+        "AMD Contrast Adaptive Sharpening (CAS) shader pass",
+        "3DS 800x240 Progressive 2D mode with custom bezels",
+        "Tesla Overlay (Switch) and Luma 3GX in-game configuration menus",
+        "Automated devkitPro CI/CD build actions"
+      ]
+    }
+  ]
+}
