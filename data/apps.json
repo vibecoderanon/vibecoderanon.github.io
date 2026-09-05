@@ -170,8 +170,8 @@
       "accentColor": "#8b5cf6",
       "category": "Switch Homebrew",
       "platforms": ["Switch"],
-      "tagline": "Controller-driven LÖVE Potion save editor for DELTARUNE Ch. 1 & 2 with GameMaker DS-List hex engine.",
-      "description": "Native Nintendo Switch homebrew for editing DELTARUNE save data directly on console. Features full GameMaker DS-list hex codec support, direct SD card scanning for JKSV and Checkpoint backups, party stats (Kris, Susie, Ralsei, Noelle), currency boosts, town recruits roster completer, and secret boss flag toggles.",
+      "tagline": "Controller-driven LÖVE Potion save editor for DELTARUNE Chapters 1–5 with GameMaker DS-List hex engine.",
+      "description": "Native Nintendo Switch homebrew for editing DELTARUNE save data directly on console across Chapters 1 through 5. Features full GameMaker DS-list hex codec support, direct SD card scanning for JKSV and Checkpoint backups, party stats (Kris, Susie, Ralsei, Noelle), full catalog of 41 weapons, 39 armors, 52 consumables, 34 key items, all 36 recruitable Darkners, and secret boss / Shadow Crystal flags.",
       "badge": "Standalone Homebrew",
       "version": "v1.0.0",
       "actionType": "preview",
@@ -201,14 +201,14 @@
         }
       ],
       "features": [
-        "Native GameMaker DS-list hex serializer/deserializer",
-        "Auto-detects JKSV and Checkpoint saves in sdmc:/JKSV/DELTARUNE/",
-        "Full Party stat tuning: HP, Max HP, ATK, DEF, MAG, and GUTS",
-        "Dark Dollars & Light World Money editing up to $99,999",
-        "Equipment & Inventory manager for weapons, armors, and items",
-        "Chapter 2 Town Recruits roster inspector with 1-click 'Recruit All'",
-        "Secret boss flag toggles: Jevil, Spamton NEO, and Snowgrave route",
-        "Automatic .bak safety backups created before every save"
+        "Full Chapters 1–5 GameMaker DS-list hex codec support",
+        "Direct SD card auto-discovery for JKSV and Checkpoint saves",
+        "Party stat tuning for Kris, Susie, Ralsei, and Noelle across all chapters",
+        "Catalog of 41 Weapons, 39 Armors, 52 Consumables, and 34 Key Items",
+        "All 36 Recruitable Darkners with chapter filtering and 1-click 'Recruit All'",
+        "Secret Boss & Crystal flags: Jevil, Spamton NEO, Tenna, Hammer of Justice, Pink, Snowgrave, and Crystals 1–5",
+        "1-click Max Money ($99,999) and full party restoration",
+        "Automatic safety backups (.bak) created before every write"
       ]
     }
   ]
