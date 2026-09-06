@@ -182,7 +182,7 @@ class HomebrewHub {
       this.activeModalComponent.destroy();
     }
 
-    const componentKey = app.toolComponent || app.previewComponent || app.compareComponent;
+    const componentKey = app.toolComponent || app.showcaseComponent || app.previewComponent || app.compareComponent;
     const ComponentClass = this.componentMap[componentKey];
 
     if (ComponentClass) {

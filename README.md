@@ -6,11 +6,11 @@
 [![Architecture: Static Zero--Backend](https://img.shields.io/badge/Architecture-Static_Zero--Backend-8b5cf6.svg)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](LICENSE)
 
-A cyber-retro unified web portal and interactive homebrew hub engineered by **vibecoderanon**. The hub provides zero-backend, client-side web tools, 60 FPS canvas visualizers, reverse-engineering save editors, and 1-click SD card distribution packages for Nintendo Switch and Nintendo 3DS homebrew.
+A cyber-retro unified web portal and interactive homebrew hub engineered by **vibecoderanon**. The hub provides zero-backend, client-side save tools, console homebrew capture showcases, and 1-click SD card distribution packages for Nintendo Switch and Nintendo 3DS homebrew.
 
 > [!TIP]
 > **Launch the live web portal online:** **[https://vibecoderanon.github.io/](https://vibecoderanon.github.io/)**
-> Every tool, save converter, visualizer, and download package can be launched directly in your browser with zero installation.
+> Run client-side save editors with zero installation, inspect console screenshot showcases, and download verified SD card distribution packages.
 
 ---
 
@@ -35,14 +35,14 @@ A cyber-retro unified web portal and interactive homebrew hub engineered by **vi
 
 ## Applications Directory
 
-| Application | Category | Platform | In-Browser Capability | Direct Web Portal Link | Source Repository |
+| Application | Category | Platform | Capability & Features | Direct Web Portal Link | Source Repository |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Deltarune Switch Save Editor** | Save Editor | Switch | Full Chapters 1–5 party, item, and Darkner editor | [Launch Editor](https://vibecoderanon.github.io/#deltarune) | [deltarune-save-editor](https://github.com/vibecoderanon/deltarune-save-editor) |
-| **DELTARUNE Save Manager** | Save Manager | Switch | NAND eMMC mounting preview & SD card bundles | [View Manager](https://vibecoderanon.github.io/#deltarune-manager) | [deltarune-save-manager](https://github.com/vibecoderanon/deltarune-save-manager) |
+| **Deltarune Switch Save Editor** | Save Editor | Switch | In-browser save editor with Chapters 1–5 party, item, and Darkner editing + Switch SD package | [Launch Editor](https://vibecoderanon.github.io/#deltarune) | [deltarune-save-editor](https://github.com/vibecoderanon/deltarune-save-editor) |
+| **DELTARUNE Save Manager** | Save Manager | Switch | Native C++ NAND mounting architecture, console captures & SD package | [View Manager](https://vibecoderanon.github.io/#deltarune-manager) | [deltarune-save-manager](https://github.com/vibecoderanon/deltarune-save-manager) |
 | **Skyward Sword HD Save Editor** | Save Editor | Switch | In-browser binary editor & CRC32 recalculator | [Launch SSSE](https://vibecoderanon.github.io/#ssse) | [skyward-sword-hd-save-editor](https://github.com/vibecoderanon/skyward-sword-hd-save-editor) |
-| **Xenoblade Chronicles Save Tool** | Save Converter | Wii / Switch | Wii `monado` $\rightarrow$ Switch `XC:DE` binary translation | [Launch XCDE](https://vibecoderanon.github.io/#xcde) | [xc-games-save-tool](https://github.com/vibecoderanon/xc-games-save-tool) |
-| **Kickass Homebrew** | Switch Homebrew | Switch | App showcase, console captures & verified SD packages | [View App](https://vibecoderanon.github.io/#kickass) | [kickass-homebrew](https://github.com/vibecoderanon/kickass-homebrew) |
-| **Sharpscale Multi-Console Suite** | Display Plugin | Switch / 3DS | Hardware scaling overrides, console captures & SD suite | [View Suite](https://vibecoderanon.github.io/#sharpscale) | [Sharpscale](https://github.com/vibecoderanon/Sharpscale) |
+| **Xenoblade Chronicles Save Tool** | Save Converter | Wii / Switch | In-browser Wii `monado` $\rightarrow$ Switch `XC:DE` binary translation | [Launch XCDE](https://vibecoderanon.github.io/#xcde) | [xc-games-save-tool](https://github.com/vibecoderanon/xc-games-save-tool) |
+| **Kickass Homebrew** | Switch Homebrew | Switch | Console capture showcase, Applet Mode architecture & verified SD package | [View App](https://vibecoderanon.github.io/#kickass) | [kickass-homebrew](https://github.com/vibecoderanon/kickass-homebrew) |
+| **Sharpscale Multi-Console Suite** | Display Plugin | Switch / 3DS | Hardware scaling overrides, console captures & multi-console SD suite | [View Suite](https://vibecoderanon.github.io/#sharpscale) | [Sharpscale](https://github.com/vibecoderanon/Sharpscale) |
 
 ---
 

@@ -66,8 +66,8 @@
       "description": "A high-performance Nintendo Switch homebrew featuring an 80s synthwave perspective grid, telemetry-driven arcade HUD, photosensitivity strobe tuner, Picross 5x5 step solver, and 9x9 Sudoku MRV constraint solver.",
       "badge": "Homebrew Suite",
       "version": "v1.0.0",
-      "actionType": "preview",
-      "previewComponent": "kickass-preview",
+      "actionType": "showcase",
+      "showcaseComponent": "kickass-preview",
       "repoUrl": "https://github.com/vibecoderanon/kickass-homebrew",
       "downloads": [
         {
@@ -113,8 +113,8 @@
       "description": "Hardware display plugins and configuration utilities for Nintendo Switch (Sharpscale-NX via SaltyNX & Tesla) and Nintendo 3DS (Sharpscale-3DS via Luma 3GX & FIRM patcher) delivering razor-sharp, pixel-perfect visuals.",
       "badge": "Multi-Console Suite",
       "version": "v1.0.0",
-      "actionType": "compare",
-      "compareComponent": "sharpscale-compare",
+      "actionType": "showcase",
+      "showcaseComponent": "sharpscale-compare",
       "repoUrl": "https://github.com/vibecoderanon/Sharpscale",
       "downloads": [
         {
@@ -223,8 +223,8 @@
       "description": "Directly mounts, dumps, edits, and restores DELTARUNE Chapters 1–5 save data to and from console NAND (eMMC USER partition) via Horizon OS account and filesystem services. Zero external save managers required. Features C++17 DS-list hex codec, 1280x720 linear framebuffer Dark World UI, 1-click JKSV SD card bridge, party stat tuning, 41 weapons, 39 armors, 52 items, 34 key items, 36 recruits, and secret boss flags.",
       "badge": "Native NAND Engine",
       "version": "v1.0.0",
-      "actionType": "preview",
-      "previewComponent": "deltarune-manager-preview",
+      "actionType": "showcase",
+      "showcaseComponent": "deltarune-manager-preview",
       "repoUrl": "https://github.com/vibecoderanon/deltarune-save-manager",
       "downloads": [
         {
