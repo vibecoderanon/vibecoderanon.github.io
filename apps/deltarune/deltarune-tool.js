@@ -339,7 +339,7 @@ export class DeltaruneTool {
             <div class="dropzone-inner">
               <span class="dropzone-icon">📥</span>
               <div class="dropzone-content">
-                <strong>Drop <code>filech1_0</code> through <code>filech5_5</code> here</strong> or click to choose file
+                <strong>Drop <code>filech1_0</code> through <code>filech5_5</code> here</strong> (from JKSV, Sphaira, or Checkpoint) or click to choose file
                 <small>100% private in-browser editing — files never leave your computer</small>
               </div>
               <input type="file" id="dr-file-input" style="display:none">
@@ -472,9 +472,9 @@ export class DeltaruneTool {
               <h4>Switch SD Installation</h4>
               <ol class="steps-list">
                 <li>Extract <code>deltarune-save-editor-switch-v1.0.0.zip</code> to <code>sdmc:/</code></li>
-                <li>Dump save with <strong>JKSV</strong> to <code>sdmc:/JKSV/DELTARUNE/</code></li>
+                <li>Dump save via <strong>JKSV</strong> (<code>sdmc:/JKSV/DELTARUNE/</code>) or <strong>Sphaira</strong> (<code>sdmc:/dumps/Save/DELTARUNE/</code>)</li>
                 <li>Launch <strong>Deltarune Save Editor</strong> from Homebrew Menu to edit stats</li>
-                <li>Restore modified save via JKSV</li>
+                <li>Restore modified save via JKSV or Sphaira</li>
               </ol>
             </div>
           </div>

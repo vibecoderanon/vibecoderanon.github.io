@@ -87,8 +87,8 @@ export class DeltaruneManagerPreview {
             </div>
             <div class="feature-card">
               <span class="feat-icon">📂</span>
-              <h5>JKSV SD Bridge</h5>
-              <p>1-click export to <code>sdmc:/JKSV/DELTARUNE/&lt;timestamp&gt;/</code> and 1-click restoration.</p>
+              <h5>JKSV &amp; Sphaira Bridge</h5>
+              <p>1-click export to <code>sdmc:/JKSV/</code> and auto-discovery across Sphaira (<code>sdmc:/dumps/Save/</code>) and Checkpoint.</p>
             </div>
             <div class="feature-card">
               <span class="feat-icon">🚀</span>
@@ -331,13 +331,13 @@ export class DeltaruneManagerPreview {
         // SD Backups View
         ctx.fillStyle = "#f8fafc";
         ctx.font = "bold 14px 'Inter', sans-serif";
-        ctx.fillText("Scanned SD Card Save Slots (sdmc:/JKSV/DELTARUNE/)", 32, 155);
+        ctx.fillText("Scanned SD Card Save Slots (JKSV, Sphaira & Checkpoint)", 32, 155);
 
         const slots = [
-          "2026-09-05 @ 19.10.12 - Chapter 1 & 2 Completed Backup",
-          "2026-09-05 @ 14.30.00 - Snowgrave Route Chapter 2 Slot 1",
-          "2026-09-04 @ 22.15.45 - Castle Town Full Recruits 36/36",
-          "2026-09-02 @ 10.05.10 - Jevil & Spamton NEO Dual Defeat"
+          "sdmc:/dumps/Save/DELTARUNE/2026-09-06 14.30.00 (Sphaira Backup)",
+          "sdmc:/JKSV/DELTARUNE/2026-09-05 @ 19.10.12 (JKSV All Chapters)",
+          "sdmc:/dumps/Save/0100A0D022A68000/Main (Sphaira Title ID Slot)",
+          "sdmc:/switch/Checkpoint/saves/DELTARUNE/Default (Checkpoint Slot)"
         ];
 
         for (let s = 0; s < slots.length; s++) {

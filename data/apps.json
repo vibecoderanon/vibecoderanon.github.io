@@ -171,7 +171,7 @@
       "category": "Switch Homebrew",
       "platforms": ["Switch"],
       "tagline": "Controller-driven LÖVE Potion save editor for DELTARUNE Chapters 1–5 with GameMaker DS-List hex engine.",
-      "description": "Native Nintendo Switch homebrew for editing DELTARUNE save data directly on console across Chapters 1 through 5. Features full GameMaker DS-list hex codec support, direct SD card scanning for JKSV and Checkpoint backups, party stats (Kris, Susie, Ralsei, Noelle), full catalog of 41 weapons, 39 armors, 52 consumables, 34 key items, all 36 recruitable Darkners, and secret boss / Shadow Crystal flags.",
+      "description": "Native Nintendo Switch homebrew for editing DELTARUNE save data directly on console across Chapters 1 through 5. Features full GameMaker DS-list hex codec support, direct SD card scanning for JKSV, Sphaira, and Checkpoint backups, party stats (Kris, Susie, Ralsei, Noelle), full catalog of 41 weapons, 39 armors, 52 consumables, 34 key items, all 36 recruitable Darkners, and secret boss / Shadow Crystal flags.",
       "badge": "Interactive Save Editor",
       "version": "v1.0.0",
       "actionType": "tool",
@@ -202,7 +202,7 @@
       ],
       "features": [
         "Full Chapters 1–5 GameMaker DS-list hex codec support",
-        "Direct SD card auto-discovery for JKSV and Checkpoint saves",
+        "Direct SD card auto-discovery for JKSV, Sphaira, and Checkpoint saves",
         "Party stat tuning for Kris, Susie, Ralsei, and Noelle across all chapters",
         "Catalog of 41 Weapons, 39 Armors, 52 Consumables, and 34 Key Items",
         "All 36 Recruitable Darkners with chapter filtering and 1-click 'Recruit All'",
@@ -252,6 +252,7 @@
       "features": [
         "Direct console NAND (eMMC USER) save mounting via fsdevMountSaveData",
         "1-Click JKSV-style SD dumping (sdmc:/JKSV/DELTARUNE/<timestamp>/)",
+        "SD backup auto-scanner supporting JKSV, Sphaira (sdmc:/dumps/Save/), and Checkpoint",
         "1-Click SD backup restoration to console NAND with atomic commit",
         "C++17 GameMaker DS-list hex codec for Chapters 1 through 5",
         "Dark World catalog: 41 Weapons, 39 Armors, 52 Items, 34 Key Items, 36 Recruits",

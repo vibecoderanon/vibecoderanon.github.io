@@ -1,4 +1,4 @@
-﻿// XCDE Tool Component for vibecoderanon Portal
+// XCDE Tool Component for vibecoderanon Portal
 export class XCDETool {
   constructor(container) {
     this.container = container;
@@ -79,7 +79,7 @@ export class XCDETool {
 
           <!-- Downloadable Switch DE Bundle -->
           <div class="conversion-downloads">
-            <div class="section-title">📦 Ready-to-Restore Switch Saves (JKSV / Checkpoint)</div>
+            <div class="section-title">📦 Ready-to-Restore Switch Saves (JKSV / Checkpoint / Sphaira)</div>
             <p class="section-desc">Pre-converted and verified for <em>Xenoblade Chronicles: Definitive Edition</em> with pre-clear title screen protection:</p>
             <div class="download-chips">
               <a href="apps/xcde/samples/bfsgame00.sav" download="bfsgame00.sav" class="chip-btn">
