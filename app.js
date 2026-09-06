@@ -1,10 +1,10 @@
 // Main Portal Application & App Pipeline Controller
-import { SSSETool } from './apps/ssse/ssse-tool.js?v=1.2';
-import { XCDETool } from './apps/xcde/xcde-tool.js?v=1.2';
-import { KickassPreview } from './apps/kickass/kickass-preview.js?v=1.2';
-import { SharpscaleCompare } from './apps/sharpscale/sharpscale-compare.js?v=1.2';
-import { DeltaruneTool } from './apps/deltarune/deltarune-tool.js?v=1.2';
-import { DeltaruneManagerPreview } from './apps/deltarune-manager/deltarune-manager-preview.js?v=1.2';
+import { SSSETool } from './apps/ssse/ssse-tool.js?v=1.3';
+import { XCDETool } from './apps/xcde/xcde-tool.js?v=1.3';
+import { KickassPreview } from './apps/kickass/kickass-preview.js?v=1.3';
+import { SharpscaleCompare } from './apps/sharpscale/sharpscale-compare.js?v=1.3';
+import { DeltaruneTool } from './apps/deltarune/deltarune-tool.js?v=1.3';
+import { DeltaruneManagerPreview } from './apps/deltarune-manager/deltarune-manager-preview.js?v=1.3';
 
 class HomebrewHub {
   constructor() {
@@ -105,15 +105,15 @@ class HomebrewHub {
 
   getActionIcon(type) {
     if (type === 'tool') return '⚡';
-    if (type === 'preview') return '▶️';
+    if (type === 'preview' || type === 'showcase') return '🎮';
     if (type === 'compare') return '🔍';
     return '🚀';
   }
 
   getActionLabel(type) {
     if (type === 'tool') return 'Launch Tool';
-    if (type === 'preview') return 'Live Preview';
-    if (type === 'compare') return 'Compare Scaling';
+    if (type === 'preview' || type === 'showcase') return 'View App';
+    if (type === 'compare') return 'View Suite';
     return 'Open';
   }
 

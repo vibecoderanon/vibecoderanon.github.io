@@ -314,12 +314,12 @@ export class DeltaruneTool {
         </div>
 
         <div class="tool-body">
-          <!-- Dark World Retro Canvas Header -->
-          <div class="canvas-container dr-canvas-box">
-            <canvas id="dr-canvas" width="800" height="180"></canvas>
-            <div class="canvas-tag-bar">
-              <span class="dr-tag red">♥ KRIS'S SOUL ENGINE</span>
-              <span class="dr-tag purple" id="dr-status-badge">Awaiting Save File</span>
+          <!-- Screenshot Preview / Placeholder Image -->
+          <div class="app-screenshot-container">
+            <img src="apps/deltarune/placeholder.svg" alt="Deltarune Switch Save Editor Console Capture" class="app-screenshot-img" id="deltarune-screenshot" />
+            <div class="screenshot-caption">
+              <span class="caption-icon">📷</span>
+              <span>Nintendo Switch Capture — Automated console screen capture pending</span>
             </div>
           </div>
 
@@ -483,87 +483,9 @@ export class DeltaruneTool {
       </div>
     `;
 
-    this.initCanvas();
     this.bindEvents();
     // Auto-load Chapter 2 sample by default
     this.loadSampleChapter(2);
-  }
-
-  initCanvas() {
-    const canvas = this.container.querySelector('#dr-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    const animate = () => {
-      this.animId = requestAnimationFrame(animate);
-      this.time = (this.time || 0) + 0.03;
-
-      ctx.fillStyle = "#0c0a1a";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Stars in Dark World background
-      ctx.fillStyle = "rgba(255, 255, 255, 0.4)";
-      for (let i = 0; i < 24; i++) {
-        const sx = (i * 37 + this.time * 5) % canvas.width;
-        const sy = (i * 19 + Math.sin(this.time + i) * 10) % canvas.height;
-        ctx.fillRect(sx, sy, 2, 2);
-      }
-
-      // Dialog Border (Retro Undertale/Deltarune styled box)
-      ctx.strokeStyle = "#ffffff";
-      ctx.lineWidth = 4;
-      ctx.strokeRect(16, 16, canvas.width - 32, canvas.height - 32);
-
-      ctx.strokeStyle = "#4c1d95";
-      ctx.lineWidth = 2;
-      ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
-
-      // Kris Pulsing Red SOUL
-      const soulPulse = Math.sin(this.time * 3) * 2;
-      ctx.save();
-      ctx.translate(56, 88);
-      ctx.scale(1 + soulPulse * 0.05, 1 + soulPulse * 0.05);
-
-      // Draw SOUL heart
-      ctx.fillStyle = "#ef4444";
-      ctx.beginPath();
-      ctx.moveTo(0, 10);
-      ctx.bezierCurveTo(-14, -6, -20, -18, -10, -22);
-      ctx.bezierCurveTo(-2, -24, 0, -14, 0, -12);
-      ctx.bezierCurveTo(0, -14, 2, -24, 10, -22);
-      ctx.bezierCurveTo(20, -18, 14, -6, 0, 10);
-      ctx.fill();
-
-      // Inner soul glow
-      ctx.fillStyle = "#fca5a5";
-      ctx.beginPath();
-      ctx.arc(0, -10, 4, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-
-      // Dialogue Text
-      ctx.font = "bold 18px 'Fira Code', monospace";
-      ctx.fillStyle = "#ffffff";
-
-      // Rotate quotes every 5 seconds
-      this.quoteTime = (this.quoteTime || 0) + 0.016;
-      if (this.quoteTime > 5) {
-        this.quoteTime = 0;
-        this.currentQuote = (this.currentQuote + 1) % this.quotes.length;
-      }
-
-      const quote = this.quotes[this.currentQuote];
-      ctx.fillText(`* "${quote}"`, 90, 75);
-
-      ctx.font = "14px 'Inter', sans-serif";
-      ctx.fillStyle = "#94a3b8";
-      const statusText = this.saveData
-        ? `Loaded: ${this.saveData.filename} (Chapter ${this.saveData.chapter}) • Party: ${this.saveData.characters.map(c => c.name).join(", ")}`
-        : "Drop your Nintendo Switch DELTARUNE save file below to begin editing.";
-      ctx.fillText(statusText, 90, 110);
-    };
-
-    animate();
   }
 
   bindEvents() {

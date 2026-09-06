@@ -41,8 +41,8 @@ A cyber-retro unified web portal and interactive homebrew hub engineered by **vi
 | **DELTARUNE Save Manager** | Save Manager | Switch | NAND eMMC mounting preview & SD card bundles | [View Manager](https://vibecoderanon.github.io/#deltarune-manager) | [deltarune-save-manager](https://github.com/vibecoderanon/deltarune-save-manager) |
 | **Skyward Sword HD Save Editor** | Save Editor | Switch | In-browser binary editor & CRC32 recalculator | [Launch SSSE](https://vibecoderanon.github.io/#ssse) | [skyward-sword-hd-save-editor](https://github.com/vibecoderanon/skyward-sword-hd-save-editor) |
 | **Xenoblade Chronicles Save Tool** | Save Converter | Wii / Switch | Wii `monado` $\rightarrow$ Switch `XC:DE` binary translation | [Launch XCDE](https://vibecoderanon.github.io/#xcde) | [xc-games-save-tool](https://github.com/vibecoderanon/xc-games-save-tool) |
-| **Kickass Homebrew** | Switch Homebrew | Switch | 60 FPS synthwave grid visualizer & solver telemetry | [Launch Preview](https://vibecoderanon.github.io/#kickass) | [kickass-homebrew](https://github.com/vibecoderanon/kickass-homebrew) |
-| **Sharpscale Multi-Console Suite** | Display Plugin | Switch / 3DS | Interactive split-screen integer scaling slider | [Compare Scaling](https://vibecoderanon.github.io/#sharpscale) | [Sharpscale](https://github.com/vibecoderanon/Sharpscale) |
+| **Kickass Homebrew** | Switch Homebrew | Switch | App showcase, console captures & verified SD packages | [View App](https://vibecoderanon.github.io/#kickass) | [kickass-homebrew](https://github.com/vibecoderanon/kickass-homebrew) |
+| **Sharpscale Multi-Console Suite** | Display Plugin | Switch / 3DS | Hardware scaling overrides, console captures & SD suite | [View Suite](https://vibecoderanon.github.io/#sharpscale) | [Sharpscale](https://github.com/vibecoderanon/Sharpscale) |
 
 ---
 
@@ -108,7 +108,7 @@ A cyber-retro unified web portal and interactive homebrew hub engineered by **vi
 * **Highlights:**
   - Retro synthwave homebrew suite engineered natively in Lua using the LÖVE Potion framework.
   - Ultra-lightweight memory profile (~5.3 MB footprint) safe for restricted Nintendo Switch Applet Mode (Album overlay).
-  - 60 FPS perspective grid projection and dynamic 3D WordArt displacement in JavaScript Canvas.
+  - Dedicated console screenshot showcase container prepared for direct hardware captures.
   - Real-time visual controller monitor with circular button & D-Pad telemetry HUD.
   - Self-solving Picross 5×5 logic engine and 9×9 Sudoku Minimum Remaining Values (MRV) constraint solver.
   - Hidden easter egg reward screen.
@@ -122,7 +122,7 @@ A cyber-retro unified web portal and interactive homebrew hub engineered by **vi
 * **Category:** Display Plugins & Configuration Utilities
 * **Highlights:**
   - Hardware display plugins designed to eliminate blurry bilinear hardware scaling across Nintendo Switch and Nintendo 3DS.
-  - **Interactive Split-Screen Slider:** Compare stock bilinear blur vs. nearest-neighbor integer scaling and AMD Contrast Adaptive Sharpening (CAS).
+  - Dedicated hardware display scaling showcase container prepared for direct console captures.
   - **Nintendo Switch (`Sharpscale-NX`):** SaltyNX NVN/VI hook plugin (`sharpscale.elf`) and Tesla overlay (`ovl-sharpscale.ovl`) for on-the-fly tuning.
   - **Nintendo 3DS (`Sharpscale-3DS`):** Progressive 2D mode (800×240 top screen), custom bezels, FIRM polyphase matrix patcher, and Luma3DS 3GX plugin (`sharpscale.3gx`).
 * **Downloads on Portal:** All-in-one SD package (`Sharpscale-MultiConsole-Suite.zip`), Tesla overlay (`.ovl`), SaltyNX plugin (`.elf`), 3DS configurator (`.3dsx`), and Luma3DS plugin (`.3gx`).
@@ -140,8 +140,10 @@ vibecoderanon.github.io/
 │   └── apps.json                              # Central extensible application registry
 ├── apps/
 │   ├── deltarune/                             # Deltarune Save Editor app assets & downloads
+│   │   ├── placeholder.svg                    # High-res console capture placeholder
 │   │   └── downloads/                         # .zip, .nro, and .xml release bundles
 │   ├── deltarune-manager/                     # DELTARUNE Save Manager app assets & downloads
+│   │   ├── placeholder.svg                    # High-res console capture placeholder
 │   │   └── downloads/                         # .zip, .nro, and .xml release bundles
 │   ├── ssse/                                  # Skyward Sword HD Save Editor
 │   │   ├── ssse-tool.js                       # Client-side binary editor & CRC32 recalculator
@@ -151,10 +153,12 @@ vibecoderanon.github.io/
 │   │   ├── xcde-tool.js                       # Wii -> Switch DE converter & party inspector
 │   │   └── samples/                           # Pre-converted saves & templates (bfsgame00-02)
 │   ├── kickass/                               # Kickass Homebrew Showcase
-│   │   ├── kickass-preview.js                 # 60 FPS Canvas synthwave visualizer
+│   │   ├── placeholder.svg                    # High-res console capture placeholder
+│   │   ├── kickass-preview.js                 # App showcase & downloads modal
 │   │   └── downloads/                         # .zip, .nro, and .xml release bundles
 │   └── sharpscale/                            # Sharpscale Multi-Console Suite
-│       ├── sharpscale-compare.js              # Interactive split-screen comparison slider
+│       ├── placeholder.svg                    # High-res console capture placeholder
+│       ├── sharpscale-compare.js              # Hardware showcase & downloads modal
 │       └── downloads/                         # .zip, .ovl, .elf, .3dsx, .3gx release bundles
 └── .github/workflows/
     └── deploy.yml                             # Automated GitHub Pages CI/CD deployment
