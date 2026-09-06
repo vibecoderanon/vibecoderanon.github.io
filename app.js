@@ -3,6 +3,8 @@ import { SSSETool } from './apps/ssse/ssse-tool.js?v=1.2';
 import { XCDETool } from './apps/xcde/xcde-tool.js?v=1.2';
 import { KickassPreview } from './apps/kickass/kickass-preview.js?v=1.2';
 import { SharpscaleCompare } from './apps/sharpscale/sharpscale-compare.js?v=1.2';
+import { DeltaruneTool } from './apps/deltarune/deltarune-tool.js?v=1.2';
+import { DeltaruneManagerPreview } from './apps/deltarune-manager/deltarune-manager-preview.js?v=1.2';
 
 class HomebrewHub {
   constructor() {
@@ -17,7 +19,9 @@ class HomebrewHub {
       'ssse-tool': SSSETool,
       'xcde-tool': XCDETool,
       'kickass-preview': KickassPreview,
-      'sharpscale-compare': SharpscaleCompare
+      'sharpscale-compare': SharpscaleCompare,
+      'deltarune-tool': DeltaruneTool,
+      'deltarune-manager-preview': DeltaruneManagerPreview
     };
   }
 

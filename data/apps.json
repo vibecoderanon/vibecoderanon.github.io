@@ -172,10 +172,10 @@
       "platforms": ["Switch"],
       "tagline": "Controller-driven LÖVE Potion save editor for DELTARUNE Chapters 1–5 with GameMaker DS-List hex engine.",
       "description": "Native Nintendo Switch homebrew for editing DELTARUNE save data directly on console across Chapters 1 through 5. Features full GameMaker DS-list hex codec support, direct SD card scanning for JKSV and Checkpoint backups, party stats (Kris, Susie, Ralsei, Noelle), full catalog of 41 weapons, 39 armors, 52 consumables, 34 key items, all 36 recruitable Darkners, and secret boss / Shadow Crystal flags.",
-      "badge": "Standalone Homebrew",
+      "badge": "Interactive Save Editor",
       "version": "v1.0.0",
-      "actionType": "preview",
-      "previewComponent": "kickass-preview",
+      "actionType": "tool",
+      "toolComponent": "deltarune-tool",
       "repoUrl": "https://github.com/vibecoderanon/deltarune-save-editor",
       "downloads": [
         {
@@ -221,10 +221,10 @@
       "platforms": ["Switch"],
       "tagline": "Native C++ libnx save manager & editor with direct NAND eMMC mounting a la JKSV.",
       "description": "Directly mounts, dumps, edits, and restores DELTARUNE Chapters 1–5 save data to and from console NAND (eMMC USER partition) via Horizon OS account and filesystem services. Zero external save managers required. Features C++17 DS-list hex codec, 1280x720 linear framebuffer Dark World UI, 1-click JKSV SD card bridge, party stat tuning, 41 weapons, 39 armors, 52 items, 34 key items, 36 recruits, and secret boss flags.",
-      "badge": "Native Homebrew (libnx)",
+      "badge": "Native NAND Engine",
       "version": "v1.0.0",
       "actionType": "preview",
-      "previewComponent": "kickass-preview",
+      "previewComponent": "deltarune-manager-preview",
       "repoUrl": "https://github.com/vibecoderanon/deltarune-save-manager",
       "downloads": [
         {
