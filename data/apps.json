@@ -210,6 +210,55 @@
         "1-click Max Money ($99,999) and full party restoration",
         "Automatic safety backups (.bak) created before every write"
       ]
+    },
+    {
+      "id": "deltarune-manager",
+      "name": "DELTARUNE Save Manager",
+      "shortName": "DELTARUNE Mgr",
+      "icon": "💾",
+      "accentColor": "#ef4444",
+      "category": "Switch Homebrew",
+      "platforms": ["Switch"],
+      "tagline": "Native C++ libnx save manager & editor with direct NAND eMMC mounting a la JKSV.",
+      "description": "Directly mounts, dumps, edits, and restores DELTARUNE Chapters 1–5 save data to and from console NAND (eMMC USER partition) via Horizon OS account and filesystem services. Zero external save managers required. Features C++17 DS-list hex codec, 1280x720 linear framebuffer Dark World UI, 1-click JKSV SD card bridge, party stat tuning, 41 weapons, 39 armors, 52 items, 34 key items, 36 recruits, and secret boss flags.",
+      "badge": "Native Homebrew (libnx)",
+      "version": "v1.0.0",
+      "actionType": "preview",
+      "previewComponent": "kickass-preview",
+      "repoUrl": "https://github.com/vibecoderanon/deltarune-save-manager",
+      "downloads": [
+        {
+          "label": "Download SD Card Package (.ZIP)",
+          "filename": "deltarune-save-manager-switch-v1.0.0.zip",
+          "path": "apps/deltarune-manager/downloads/deltarune-save-manager-switch-v1.0.0.zip",
+          "size": "24.6 KB",
+          "primary": true
+        },
+        {
+          "label": "Download .NRO (Executable)",
+          "filename": "deltarune-save-manager.nro",
+          "path": "apps/deltarune-manager/downloads/deltarune-save-manager.nro",
+          "size": "48.0 KB",
+          "primary": false
+        },
+        {
+          "label": "Download .XML (Metadata)",
+          "filename": "deltarune-save-manager.xml",
+          "path": "apps/deltarune-manager/downloads/deltarune-save-manager.xml",
+          "size": "303 B",
+          "primary": false
+        }
+      ],
+      "features": [
+        "Direct console NAND (eMMC USER) save mounting via fsdevMountSaveData",
+        "1-Click JKSV-style SD dumping (sdmc:/JKSV/DELTARUNE/<timestamp>/)",
+        "1-Click SD backup restoration to console NAND with atomic commit",
+        "C++17 GameMaker DS-list hex codec for Chapters 1 through 5",
+        "Dark World catalog: 41 Weapons, 39 Armors, 52 Items, 34 Key Items, 36 Recruits",
+        "Secret Boss & Shadow Crystal flags: Jevil, Spamton NEO, Tenna, Snowgrave",
+        "Zero GPU dependencies: 1280x720 linear framebuffer with Kris SOUL cursor",
+        "Title Override safety protection guarding against Applet Mode 0x202 errors"
+      ]
     }
   ]
 }
